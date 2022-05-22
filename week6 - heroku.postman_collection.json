@@ -1,0 +1,342 @@
+{
+	"info": {
+		"_postman_id": "6cb93d87-c762-4d60-9f45-c90533364e5e",
+		"name": "week6 - heroku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "取得全體動態牆",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOGEwZjcyMDAwZGI4OWQ0M2ViN2I2ZCIsImlhdCI6MTY1MzIxNTI3NiwiZXhwIjoxNjUzODIwMDc2fQ.4OjbBn484sxZiuU5Mcp4axR0eKKwyC84xmkBSfQsS4s",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://secret-oasis-80115.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"secret-oasis-80115",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新增個人動態貼文",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOGEwZjcyMDAwZGI4OWQ0M2ViN2I2ZCIsImlhdCI6MTY1MzIxNTI3NiwiZXhwIjoxNjUzODIwMDc2fQ.4OjbBn484sxZiuU5Mcp4axR0eKKwyC84xmkBSfQsS4s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/123/Pictures/petpet.jpg"
+						},
+						{
+							"key": "content",
+							"value": "213",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://secret-oasis-80115.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"secret-oasis-80115",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "刪除所有動態貼文",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://secret-oasis-80115.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"secret-oasis-80115",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "刪除單筆貼文",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://secret-oasis-80115.herokuapp.com/posts/628a445137ffbddc60fb0a8f",
+					"protocol": "https",
+					"host": [
+						"secret-oasis-80115",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts",
+						"628a445137ffbddc60fb0a8f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "編輯單筆貼文",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user",
+							"value": "6276532b78634221c137502d",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "測試看看123",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/123/Pictures/fitnessmall.jpg",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://secret-oasis-80115.herokuapp.com/posts/6289dfc34cceed3be966ae16",
+					"protocol": "https",
+					"host": [
+						"secret-oasis-80115",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts",
+						"6289dfc34cceed3be966ae16"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "註冊",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"小王\",\r\n    \"email\": \"bbb@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://secret-oasis-80115.herokuapp.com/user/sign_up",
+					"protocol": "https",
+					"host": [
+						"secret-oasis-80115",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"user",
+						"sign_up"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "登入",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"bbb@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://secret-oasis-80115.herokuapp.com/user/sign_in",
+					"protocol": "https",
+					"host": [
+						"secret-oasis-80115",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"user",
+						"sign_in"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "取得個人資訊",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOGE0NGJiMzdmZmJkZGM2MGZiMGE5OSIsImlhdCI6MTY1MzIyODc0NywiZXhwIjoxNjUzODMzNTQ3fQ.AQya6sMxQrBWGXMkxmUg-G3W1zU_9cqVAWWICOlZ-Nc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://secret-oasis-80115.herokuapp.com/user/profile",
+					"protocol": "https",
+					"host": [
+						"secret-oasis-80115",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "更新個人資訊",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOGE0NGJiMzdmZmJkZGM2MGZiMGE5OSIsImlhdCI6MTY1MzIyODc0NywiZXhwIjoxNjUzODMzNTQ3fQ.AQya6sMxQrBWGXMkxmUg-G3W1zU_9cqVAWWICOlZ-Nc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "photo",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "name",
+							"value": "小王test",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "male",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://secret-oasis-80115.herokuapp.com/user/profile",
+					"protocol": "https",
+					"host": [
+						"secret-oasis-80115",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "重設密碼",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOGE0NGJiMzdmZmJkZGM2MGZiMGE5OSIsImlhdCI6MTY1MzIyODc0NywiZXhwIjoxNjUzODMzNTQ3fQ.AQya6sMxQrBWGXMkxmUg-G3W1zU_9cqVAWWICOlZ-Nc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\": \"123456789\",\r\n    \"confirmPassword\": \"123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://secret-oasis-80115.herokuapp.com/user/updatePassword",
+					"protocol": "https",
+					"host": [
+						"secret-oasis-80115",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"user",
+						"updatePassword"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
